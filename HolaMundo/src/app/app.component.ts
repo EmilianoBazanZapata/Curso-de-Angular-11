@@ -48,4 +48,19 @@ export class AppComponent {
       nombre:'Emiliano' , estado:'Desaprobado'
     }
   ]
+  mostrar = false;
+  texto = 'mostrar tabla';
+  toogle():void
+  {
+    this.mostrar = !this.mostrar;
+    if(this.mostrar ===true)
+    {
+      this.texto = 'Ocultar Tabla';
+    }
+    else
+    {
+      this.texto = 'Mostrar Tabla';
+    }
+
+  }
 }
