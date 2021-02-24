@@ -46,6 +46,12 @@ export class AppComponent {
     },
     {
       nombre:'Emiliano' , estado:'Desaprobado'
+    },
+    {
+      nombre:'Daniel' , estado:'Aprobado'
+    },
+    {
+      nombre:'Ni idea' , estado:'Libre'
     }
   ]
   mostrar = false;
