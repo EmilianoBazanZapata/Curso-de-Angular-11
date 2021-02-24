@@ -30,9 +30,10 @@ export class AppComponent {
     setInterval(()=> this.nombre = 'Ramiro',3000)
   }*/
 
-  texto ='Bienbenidos'
+  /*texto ='Bienbenidos'
   CorrejirTexto():void
   {
     this.texto='Bienvenidos'
-  }
+  }*/
+  texto='';
 }

@@ -8,7 +8,12 @@
     <img [src]="imgSrc" alt="img" width="400px" height="400px">
   </div>
 </nav>-->
-<nav class="container mt-4">
+<!--<nav class="container mt-4">
   <h3>{{texto}}</h3>
   <button class="btn btn-primary" (click)="CorrejirTexto()">Click me</button>
+</nav>-->
+<nav class="container mt-4">
+  <input type="text" class="form-control"placeholder="Escriba Algo Aqui"[(ngModel)]="texto">
+  <br>
+  {{texto}}
 </nav>
