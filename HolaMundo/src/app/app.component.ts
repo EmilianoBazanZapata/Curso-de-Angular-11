@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   //interpolacion del archivo ts al html INTERPOLACION
-  nombre = 'Emiliano'
+  /*nombre = 'Emiliano'
   
 
   //constructor()
@@ -28,5 +28,11 @@ export class AppComponent {
   {
     setInterval(()=> this.InputDeshabilitado = false,3000)
     setInterval(()=> this.nombre = 'Ramiro',3000)
+  }*/
+
+  texto ='Bienbenidos'
+  CorrejirTexto():void
+  {
+    this.texto='Bienvenidos'
   }
 }
