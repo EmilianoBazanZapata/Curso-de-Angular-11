@@ -35,5 +35,17 @@ export class AppComponent {
   {
     this.texto='Bienvenidos'
   }*/
-  texto='';
+  //texto='';
+  listEstudiantes:any[]=
+  [
+    {
+      nombre:'Andrea' , estado:'Desaprobado'
+    },
+    {
+      nombre:'Lucas' , estado:'Regular'
+    },
+    {
+      nombre:'Emiliano' , estado:'Desaprobado'
+    }
+  ]
 }
