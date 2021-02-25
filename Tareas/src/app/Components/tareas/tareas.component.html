@@ -13,15 +13,15 @@
             <ul class="list-group ">
                 <li class="list-group-item d-flex justify-content-between" 
                     *ngFor="let tarea of listTareas; let i = index">
-                    <span class="cursor">
-                        <i class="fas fa-circle-notch">
-
-                        </i></span>
+                    <span class="cursor" (click)="ActualizarTarea(tarea,i)">
+                        <i [class.text-success]="tarea.estado === true" [ngClass]="tarea.estado ? 'fas fa-check-circle' : 'fas fa-circle-notch'"></i>
+                        <!--<i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-check-circle"></i>-->
+                    </span>
                         {{tarea.nombre}}
                     <span class="cursor text-danger">
-                        <i class="far fa-trash-alt" (click)="EliminarTarea(i)">
-
-                        </i></span>
+                        <i class="far fa-trash-alt" (click)="EliminarTarea(i)"></i>
+                    </span>
                 </li>
               </ul>
         </div>
