@@ -10,8 +10,12 @@
             </div>
         </div>
         <div class="mt-4">
-            <ul class="list-group">
-                <li class="list-group-item" *ngFor="let tarea of listTareas">{{tarea.nombre}}</li>
+            <ul class="list-group ">
+                <li class="list-group-item d-flex justify-content-between" *ngFor="let tarea of listTareas">
+                    <span class="cursor"><i class="fas fa-circle-notch"></i></span>
+                    {{tarea.nombre}}
+                    <span class="cursor text-danger"><i class="far fa-trash-alt"></i></span>
+                </li>
               </ul>
         </div>
     </div>
