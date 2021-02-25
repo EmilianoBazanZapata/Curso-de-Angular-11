@@ -29,5 +29,8 @@ export class TareasComponent implements OnInit {
     //reset form
     this.nombreTarea='';
   }
-
+  EliminarTarea(index:number):void
+  {
+    this.listTareas.splice(index,1);
+  }
 }
