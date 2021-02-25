@@ -17,10 +17,17 @@ export class TareasComponent implements OnInit {
   AgregarTarea()
   {
     //Crear un objeto tareas
+     const tarea : Tarea=
+     {
+       nombre:this.nombreTarea,
+       estado: false
+     }
 
     //agregar objeto al array
+    this.listTareas.push(tarea);
 
     //reset form
+    this.nombreTarea='';
   }
 
 }
