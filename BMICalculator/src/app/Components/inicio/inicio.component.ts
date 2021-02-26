@@ -1,3 +1,4 @@
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -30,6 +31,8 @@ export class InicioComponent implements OnInit {
   }
   calcularBMI()
   {
-    this.router.navigate(['/resultado'])
+    const BMI = this.peso / Math.pow(this.altura/100,2);
+    
+    this.router.navigate(['/resultado',BMI.toFixed(1)])
   }
 }
