@@ -15,5 +15,54 @@ export class ConvertidorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  Convertir()
+  {
+    switch(this.tengo)
+    {
+      case'USD':
+      if(this.quiero ==='USD')
+      {
+        this.total = this.cantidad;
+      }
+      if(this.quiero ==='EUR')
+      {
+        this.total = this.cantidad * 0.84
+      }
+      if(this.quiero ==='LIB')
+      {
+        this.total = this.cantidad * 0.75
+      }
+      break;
 
+      case'LIB':
+      if(this.quiero ==='LIB')
+      {
+        this.total = this.cantidad;
+      }
+      if(this.quiero ==='USD')
+      {
+        this.total = this.cantidad * 1.40;
+      }
+      if(this.quiero ==='EUR')
+      {
+        this.total = this.cantidad * 1.15;
+      }
+      break;
+
+      case'EUR':
+      if(this.quiero ==='EUR')
+      {
+        this.total = this.cantidad;
+      }
+      if(this.quiero ==='LIB')
+      {
+        this.total = this.cantidad * 0.87;
+      }
+      if(this.quiero ==='USD')
+      {
+        this.total = this.cantidad * 1.22;
+      }
+      break;
+    }
+  }
 }
