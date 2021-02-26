@@ -42,3 +42,8 @@ input[type=range]::-webkit-slider-thumb
     border-radius:15px;
     margin: 3px;
 }
+
+.sexoDesactivo
+{
+    background-color: #7d2f2f33;
+}
