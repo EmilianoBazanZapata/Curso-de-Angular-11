@@ -25,8 +25,8 @@
                 <div class="fondoItem">
                     <div class="contenedor">
                         <p>Altura</p>
-                        <div class="estiloNumero">170<span class="centimetro">cm</span></div>
-                        <input type="range" class="form-range">
+                        <div class="estiloNumero">{{altura}}<span class="centimetro">cm</span></div>
+                        <input type="range" (input)="cambiarAltura($event)" class="form-range" [value]="altura" min="120" max="220">
                     </div>
                 </div>
             </div>
