@@ -17,7 +17,26 @@
     </div>
     <div class="card mt-4">
         <div class="card-body">
-            tabla
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Legajo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Salario</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empleado of ListEmpleado">
+                <th>{{empleado.Legajo}}</th>
+                <td>{{empleado.Nombre}}</td>
+                <td>{{empleado.Apellido}}</td>
+                <td>{{empleado.Sexo}}</td>
+                <td>{{empleado.Salario | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
     </div>
 </div>
