@@ -55,6 +55,12 @@ export class EmpleadoListComponent implements OnInit {
   {
     return this.ListEmpleado.length;
   }
-
-
+  ObtenerCantidadFemeninos():number
+  {
+    return this.ListEmpleado.filter(list => list.Sexo ==='femenino').length;
+  }
+  ObtenerCantidadMasculinos():number
+  {
+    return this.ListEmpleado.filter(list => list.Sexo ==='masculino').length;
+  }
 }
