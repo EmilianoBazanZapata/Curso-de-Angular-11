@@ -15,41 +15,46 @@ export class EmpleadoListComponent implements OnInit {
       Nombre:'juan',
       Apellido:'perez',
       Sexo:'masculino',
-      Salario:120.000
+      Salario:120000
     },
     {
       Legajo:2,
       Nombre:'daniela',
       Apellido:'rodriguez',
       Sexo:'femenino',
-      Salario:920.000
+      Salario:920000
     },
     {
       Legajo:3,
       Nombre:'fabiana',
       Apellido:'morales',
       Sexo:'femenino',
-      Salario:220.000
+      Salario:220000
     },
     {
       Legajo:4,
       Nombre:'carlos',
       Apellido:'peposo',
       Sexo:'masculino',
-      Salario:85.467
+      Salario:85467
     }
     ,
     {
-      Legajo:4,
+      Legajo:5,
       Nombre:'cristina',
       Apellido:'kirchner',
       Sexo:'femenino',
-      Salario:980.678
+      Salario:980678098
     }
   ];
   constructor() { }
 
   ngOnInit(): void {
   }
+  ObtenerCantidad():number
+  {
+    return this.ListEmpleado.length;
+  }
+
 
 }
