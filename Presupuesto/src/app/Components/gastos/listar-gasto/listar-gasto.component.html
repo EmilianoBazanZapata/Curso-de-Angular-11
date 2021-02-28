@@ -1,15 +1,26 @@
 <div class="container">
     <h4 class="fontTitle">Listado de Gastos</h4>
-    <div class="row">
+    <hr/>
+    <div class="row" >
         <div class="col-lg-6">
             <div class="alert alert-success">
                 Presupuesto <strong>${{ Presupuesto }}</strong>
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="alert alert-secondary">
+            <div class="alert alert-secondary SizeAlert">
                 Restante <strong>${{ Restante }}</strong>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-l-12">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between"*ngFor="let gasto of ListGastos">
+                    <strong>{{gasto.nombre}}</strong>
+                    <span class="badge rounded-pill bg-secondary">${{gasto.cantidad}}</span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
