@@ -1,15 +1,18 @@
-<div class="card">
+<div class="card text-center">
     <div class="card-body">
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sexo" id="inlineRadio1" value="Todos" [(ngModel)]="RadioButtonSeleccionado">
+            <input class="form-check-input" type="radio" name="sexo" 
+                   id="inlineRadio1" value="Todos" [(ngModel)]="RadioButtonSeleccionado" (change)="RadioChange()">
             <label class="form-check-label" for="inlineRadio1">Todos({{Todos}})</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sexo" id="inlineRadio2" value="femenino" [(ngModel)]="RadioButtonSeleccionado">
+            <input class="form-check-input" type="radio" name="sexo" 
+                   id="inlineRadio2" value="femenino" [(ngModel)]="RadioButtonSeleccionado" (change)="RadioChange()">
             <label class="form-check-label" for="inlineRadio2">Femeninos({{Femenino}})</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sexo" id="inlineRadio3" value="masculino" [(ngModel)]="RadioButtonSeleccionado">
+            <input class="form-check-input" type="radio" name="sexo" 
+                   id="inlineRadio3" value="masculino" [(ngModel)]="RadioButtonSeleccionado" (change)="RadioChange()">
             <label class="form-check-label" for="inlineRadio3">Masculinos({{Masculino}})</label>
           </div>
     </div>
