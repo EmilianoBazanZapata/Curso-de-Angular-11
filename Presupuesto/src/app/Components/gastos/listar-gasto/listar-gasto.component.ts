@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { PresupuestoService } from 'src/app/Services/presupuesto.service';
 
 @Component({
@@ -6,14 +7,28 @@ import { PresupuestoService } from 'src/app/Services/presupuesto.service';
   templateUrl: './listar-gasto.component.html',
   styleUrls: ['./listar-gasto.component.css']
 })
-export class ListarGastoComponent implements OnInit {
+export class ListarGastoComponent implements OnInit , OnDestroy{
 
-  constructor(private _PresupuestoService:PresupuestoService) { }
-
-  ngOnInit(): void {
-    this._PresupuestoService.GetGastos().subscribe(data =>
+  subscription : Subscription;
+  Presupuesto:number;
+  Restante:number;
+  constructor(private _PresupuestoService:PresupuestoService) 
+  {
+    this.Presupuesto = 0;
+    this.Restante = 0;
+    this.subscription =  this._PresupuestoService.GetGastos().subscribe(data =>
       {
         console.log(data);
       })
+  }
+
+  
+  ngOnInit(): void {
+    this.Presupuesto = this._PresupuestoService.Presupuesto;
+    this.Restante = this._PresupuestoService.Restante;
+  }
+  ngOnDestroy(): void
+  {
+    this.subscription.unsubscribe();
   }
 }
