@@ -5,5 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class PresupuestoService {
 
-  constructor() { }
+  Presupuesto:number;
+  Restante:number;
+  constructor() 
+  {
+    this.Presupuesto = 0;
+    this.Restante = 0;
+   }
 }
