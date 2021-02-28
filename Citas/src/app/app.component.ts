@@ -11,4 +11,8 @@ export class AppComponent {
   {
     this.ListCitas.push(Cita);
   }
+  EliminarCita(index:number)
+  {
+    this.ListCitas.splice(index,1);
+  }
 }

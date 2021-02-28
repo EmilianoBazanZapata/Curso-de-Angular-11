@@ -6,12 +6,12 @@
     </div>
 </div>
 
-<div class="card mt-3" *ngFor="let citas of ListadoCitas">
+<div class="card mt-3" *ngFor="let citas of ListadoCitas;let i = index">
     <div class="card-body">
         <p class="card-text"><span>Nombre: </span>{{citas.nombre}}</p>
         <p class="card-text"><span>Fecha: </span>{{citas.fecha}}</p>
         <p class="card-text"><span>Hora: </span>{{citas.hora}}</p>
         <p class="card-text"><span>Sintomas: </span>{{citas.sintomas}}</p>
-        <button class="btn btn-danger btn-block" style="width: 100%;">Eliminar </button>
+        <button class="btn btn-danger btn-block" style="width: 100%;" (click)="EliminarCita(i)">Eliminar </button>
     </div>
 </div>
