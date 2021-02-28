@@ -33,4 +33,19 @@ export class ListarGastoComponent implements OnInit , OnDestroy{
   {
     this.subscription.unsubscribe();
   }
+  AplicarColorRestante()
+  {
+    if(this.Presupuesto / 4 > this.Restante)
+    {
+      return 'alert alert-danger';
+    }
+    else if(this.Presupuesto / 2 > this.Restante)
+    {
+      return 'alert alert-warning';
+    }
+    else
+    {
+      return 'alert alert-secondary';
+    }
+  }
 }
