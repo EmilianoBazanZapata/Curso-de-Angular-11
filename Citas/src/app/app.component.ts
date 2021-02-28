@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Citas';
+  ListCitas:any[] =[];
+  AgregarCita(Cita:any)
+  {
+    this.ListCitas.push(Cita);
+    console.log(this.ListCitas);
+  }
 }

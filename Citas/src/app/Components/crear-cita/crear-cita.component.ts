@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output , EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-crear-cita',
@@ -12,6 +12,8 @@ export class CrearCitaComponent implements OnInit {
   Sintomas='';
 
   FormularioIncorrecto =false;
+  //pasamos los datos al padre
+  @Output() nuevaCita = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class CrearCitaComponent implements OnInit {
       return;
     }
     this.FormularioIncorrecto = false;
-
+   
     //creamos un objeto para pasarlo al padre
 
     const Cita =
@@ -35,6 +37,8 @@ export class CrearCitaComponent implements OnInit {
       sintomas: this.Sintomas
       
     }
+    console.log(Cita);
+    this.nuevaCita.emit(Cita);
     this.ResetCampos();
     
   }
