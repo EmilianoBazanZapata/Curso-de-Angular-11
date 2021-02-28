@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngresarGastoComponent implements OnInit {
 
-  constructor() { }
+  NombreGasto:string;
+  Cantidad:number;
+  FormularioCorrecto:boolean;
+  TextoIncorrecto:string
+  constructor() 
+  {
+    this.NombreGasto = '';
+    this.Cantidad = 0;
+    this.FormularioCorrecto = false;
+    this.TextoIncorrecto = 'Nombre Gasto o Cantidad Incorrecta'
+  }
 
   ngOnInit(): void {
+  }
+  AgregarGasto()
+  {
+    if(this.NombreGasto === '' || this.Cantidad <=0)
+    {
+      this.FormularioCorrecto = true;
+    }
+    else
+    {
+      this.FormularioCorrecto = false;
+      this.NombreGasto = '';
+      this.Cantidad = 0;
+    }
   }
 
 }
