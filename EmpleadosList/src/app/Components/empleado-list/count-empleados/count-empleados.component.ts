@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-count-empleados',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountEmpleadosComponent implements OnInit {
 
-  constructor() { }
+  @Input() Todos:number;
+  @Input() Masculino:number;
+  @Input() Femenino:number;
+  RadioButtonSeleccionado = "Todos";
+  constructor() { 
+    this.Todos= 0;
+    this.Masculino = 0;
+    this.Femenino = 0;
+  }
 
   ngOnInit(): void {
+
   }
 
 }

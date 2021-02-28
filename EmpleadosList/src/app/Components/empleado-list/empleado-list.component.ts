@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { Empleado } from 'src/app/Models/Empleado';
 
 @Component({
@@ -7,7 +7,7 @@ import { Empleado } from 'src/app/Models/Empleado';
   styleUrls: ['./empleado-list.component.css']
 })
 export class EmpleadoListComponent implements OnInit {
-
+  RadioButtonSeleccionado = "Todos";
   ListEmpleado : Empleado[]=
   [
     {
