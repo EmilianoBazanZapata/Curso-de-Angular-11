@@ -1,25 +1,31 @@
-<div class="card">
+<div class="card mt-3">
     <div class="card-body">
         <h5 class="card-title text-center">
             Agregar Cita
         </h5>
+        <div class="text-center" *ngIf="FormularioIncorrecto">
+            <h5>
+                <span class="badge bg-danger">Todos los campos son obligatorios</span>
+            </h5>
+        </div>
+        
         <div class="form-group mb-3">
             <label for="nombre">Nombre</label>
-            <input id="nombre"type="text" placeholder="Ingrese su Nombre" class="form-control">
+            <input id="nombre"type="text" placeholder="Ingrese su Nombre" class="form-control" [(ngModel)]="Nombre">
         </div>
         <div class="form-group mb-3">
             <label for="fecha">Fecha</label>
-            <input id="fecha"type="date" placeholder="Ingrese la Fecha" class="form-control">
+            <input id="fecha"type="date" placeholder="Ingrese la Fecha" class="form-control" [(ngModel)]="Fecha">
         </div>
         <div class="form-group mb-3">
             <label for="hora">Hora</label>
-            <input id="hora"type="time" placeholder="Ingrese la Hora" class="form-control">
+            <input id="hora"type="time" placeholder="Ingrese la Hora" class="form-control"[(ngModel)]="Hora">
         </div>
         <div class="form-group mb-3">
             <label for="sintomas">Sintomas</label>
-            <textarea id="sintomas"type="text" rows="3"placeholder="Ingrese los Sintomas" class="form-control"></textarea>
+            <textarea id="sintomas"type="text" rows="3"placeholder="Ingrese los Sintomas" class="form-control" [(ngModel)]="Sintomas"></textarea>
         </div>
-        <button class="btn btn-primary btn-block" style="width: 100%;">
+        <button class="btn btn-primary btn-block" style="width: 100%;" (click)="AgregarCita()">
             Agregar Cita
         </button>
     </div>
