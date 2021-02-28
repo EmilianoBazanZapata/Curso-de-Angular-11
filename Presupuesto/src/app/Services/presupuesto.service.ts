@@ -11,5 +11,10 @@ export class PresupuestoService {
   {
     this.Presupuesto = 0;
     this.Restante = 0;
-   }
+  }
+
+  AgregarGasto(gasto:any)
+  {
+    this.Restante = this.Restante - gasto.Cantidad;
+  }
 }
