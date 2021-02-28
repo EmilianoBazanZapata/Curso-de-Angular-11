@@ -1,7 +1,17 @@
-<div class="card mt-3">
+<div class="card mt-3" *ngIf="ListadoCitas.length === 0">
     <div class="card-body">
         <h5 class="card-title text-center">
-            Listado de Citas
+            <h5 class="card-title text-center">No hay citas Para Mostrar</h5>
         </h5>
+    </div>
+</div>
+
+<div class="card mt-3" *ngFor="let citas of ListadoCitas">
+    <div class="card-body">
+        <p class="card-text"><span>Nombre: </span>{{citas.nombre}}</p>
+        <p class="card-text"><span>Fecha: </span>{{citas.fecha}}</p>
+        <p class="card-text"><span>Hora: </span>{{citas.hora}}</p>
+        <p class="card-text"><span>Sintomas: </span>{{citas.sintomas}}</p>
+        <button class="btn btn-danger btn-block" style="width: 100%;">Eliminar </button>
     </div>
 </div>

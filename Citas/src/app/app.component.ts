@@ -10,6 +10,5 @@ export class AppComponent {
   AgregarCita(Cita:any)
   {
     this.ListCitas.push(Cita);
-    console.log(this.ListCitas);
   }
 }
