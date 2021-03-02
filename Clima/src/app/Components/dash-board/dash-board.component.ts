@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
 
+  UrlImagen = 'https://image.flaticon.com/icons/png/512/1116/1116453.png';
+  Ciudad = '';
   constructor() { }
 
   ngOnInit(): void {
+  }
+  ObtenerClima()
+  {
+    console.log(this.Ciudad);
   }
 
 }
