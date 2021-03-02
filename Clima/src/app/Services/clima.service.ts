@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ClimaService {
 
+  Url='';
+  Key='5754e3ef9c214e608e57faad2486bd70';
   constructor() { }
 }
