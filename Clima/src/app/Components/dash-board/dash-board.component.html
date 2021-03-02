@@ -6,11 +6,15 @@
         <div class="col-lg-6 mt-4">
             <input [(ngModel)]="Ciudad" class="form-control mr-sm-2 size" type="text" placeholder="Buscar Ciudad">
             <button type="button" class="btn btn-primary btn-block  mt-4 size" [disabled]="Ciudad == ''" (click)="ObtenerClima()">Buscar</button>
-            <div class="card mt-3">
+            <div class="card text-white bg-dark mt-3">
+                <div class="card-header">Resultado</div>
                 <div class="card-body">
-                    <p><b>Temperatura : </b>27 </p>
-                    <p><b>Humedad : </b>27 </p>
-                    <p><b>Clima : </b>27 </p>
+                    <h4 class="card-title">Infomración</h4>
+                    <div class="card-text">
+                        <p><b>Temperatura : </b>27 </p>
+                        <p><b>Humedad : </b>27 </p>
+                        <p><b>Clima : </b>27 </p>
+                    </div>
                 </div>
             </div>
         </div>
