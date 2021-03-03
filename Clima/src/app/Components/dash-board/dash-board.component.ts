@@ -20,19 +20,22 @@ export class DashBoardComponent implements OnInit {
     this.Temperatura = 0;
     this.Humedad = 0;
     this.Clima = 0;
+    this.Tarjeta = false;
   }
 
   ngOnInit(): void {
   }
   ObtenerClima()
   {
-   this.Loading = true;
+    this.Loading =!this.Loading;
+    this.Tarjeta =!this.Tarjeta;
     this._ClimaService.GetClima(this.Ciudad).subscribe(data=>
       {
         this.Loading = false;
         this.Temperatura = data.main.temp - 273;
         this.Humedad = data.main.humidity;
         this.Clima = data.weather[0].main;
+        this.Tarjeta = true;
       });
   }
 
