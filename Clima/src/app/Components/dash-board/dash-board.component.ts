@@ -11,12 +11,15 @@ export class DashBoardComponent implements OnInit {
   UrlImagen = 'https://image.flaticon.com/icons/png/512/1116/1116453.png';
   Ciudad = '';
   Loading = false;
-  Temperatura = '0';
-  Humedad = '0';
-  Clima= '0';
+  Temperatura:number;
+  Humedad:number;
+  Clima:number;
+  Tarjeta:boolean;
   constructor(private _ClimaService:ClimaService) 
   {
-
+    this.Temperatura = 0;
+    this.Humedad = 0;
+    this.Clima = 0;
   }
 
   ngOnInit(): void {
@@ -27,6 +30,9 @@ export class DashBoardComponent implements OnInit {
     this._ClimaService.GetClima(this.Ciudad).subscribe(data=>
       {
         this.Loading = false;
+        this.Temperatura = data.main.temp - 273;
+        this.Humedad = data.main.humidity;
+        this.Clima = data.weather[0].main;
       });
   }
 
