@@ -6,6 +6,12 @@
         <div class="col-lg-6 mt-4">
             <input [(ngModel)]="Ciudad" class="form-control mr-sm-2 size" type="text" placeholder="Buscar Ciudad">
             <button type="button" class="btn btn-primary btn-block  mt-4 size" [disabled]="Ciudad == ''" (click)="ObtenerClima()">Buscar</button>
+
+            <div class="text-center mt-3" *ngIf="Loading">
+                <div class="spinner-border text-dark" role="status">
+                </div>
+
+            </div>
             <div class="card text-white bg-dark mt-3">
                 <div class="card-header">Resultado</div>
                 <div class="card-body">

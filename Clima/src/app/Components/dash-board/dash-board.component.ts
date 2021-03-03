@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClimaService } from 'src/app/Services/clima.service';
 
 @Component({
   selector: 'app-dash-board',
@@ -9,13 +10,24 @@ export class DashBoardComponent implements OnInit {
 
   UrlImagen = 'https://image.flaticon.com/icons/png/512/1116/1116453.png';
   Ciudad = '';
-  constructor() { }
+  Loading = false;
+  Temperatura = '0';
+  Humedad = '0';
+  Clima= '0';
+  constructor(private _ClimaService:ClimaService) 
+  {
+
+  }
 
   ngOnInit(): void {
   }
   ObtenerClima()
   {
-    console.log(this.Ciudad);
+   this.Loading = true;
+    this._ClimaService.GetClima(this.Ciudad).subscribe(data=>
+      {
+        this.Loading = false;
+      });
   }
 
 }
