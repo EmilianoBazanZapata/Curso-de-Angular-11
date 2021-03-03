@@ -7,6 +7,11 @@
             <input [(ngModel)]="Ciudad" class="form-control mr-sm-2 size" type="text" placeholder="Buscar Ciudad">
             <button type="button" class="btn btn-primary btn-block  mt-4 size" [disabled]="Ciudad == ''" (click)="ObtenerClima()">Buscar</button>
 
+            <div class="alert alert-dismissible alert-danger mt-3" *ngIf="Error">
+                <button type="button" class="close" data-dismiss="alert" (click)="CerrarMensaje()">&times;</button>
+                <strong>Cuidado , </strong> <a href="#" class="alert-link">La ciudad Ingresada no Existe</a> , intente ingresando otra.
+            </div>
+
             <div class="text-center mt-3" *ngIf="Loading">
                 <div class="spinner-border text-dark" role="status">
                 </div>

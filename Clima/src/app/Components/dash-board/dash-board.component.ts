@@ -16,6 +16,7 @@ export class DashBoardComponent implements OnInit {
   Clima:number;
   Tarjeta:boolean;
   Nombre:string;
+  Error:boolean;
   constructor(private _ClimaService:ClimaService) 
   {
     this.Temperatura = 0;
@@ -23,6 +24,7 @@ export class DashBoardComponent implements OnInit {
     this.Clima = 0;
     this.Tarjeta = false;
     this.Nombre = '';
+    this.Error = false;
   }
 
   ngOnInit(): void {
@@ -39,7 +41,16 @@ export class DashBoardComponent implements OnInit {
         this.Clima = data.weather[0].main;
         this.Nombre = data.name;
         this.Tarjeta = true;
+      },error=>
+      {
+        this.Loading = false;
+        this.Tarjeta = false;
+        this.Error = true;
       });
+  }
+  CerrarMensaje()
+  {
+    this.Error = false;
   }
 
 }
