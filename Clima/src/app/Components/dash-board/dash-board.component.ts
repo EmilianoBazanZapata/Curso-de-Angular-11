@@ -15,12 +15,14 @@ export class DashBoardComponent implements OnInit {
   Humedad:number;
   Clima:number;
   Tarjeta:boolean;
+  Nombre:string;
   constructor(private _ClimaService:ClimaService) 
   {
     this.Temperatura = 0;
     this.Humedad = 0;
     this.Clima = 0;
     this.Tarjeta = false;
+    this.Nombre = '';
   }
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class DashBoardComponent implements OnInit {
         this.Temperatura = data.main.temp - 273;
         this.Humedad = data.main.humidity;
         this.Clima = data.weather[0].main;
+        this.Nombre = data.name;
         this.Tarjeta = true;
       });
   }

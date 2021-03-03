@@ -12,10 +12,11 @@
                 </div>
 
             </div>
-            <div class="card text-white bg-dark mt-3 size mb-3" *ngIf="Tarjeta">
+            <div class="card text-white bg-primary mt-3 size mb-3" *ngIf="Tarjeta">
                 <div class="card-header ">Resultado</div>
                 <div class="card-body ">
                     <div class="card-text ">
+                        <p><b>Nombre : </b>{{Nombre}}</p>
                         <p><b>Temperatura : </b>{{Temperatura | number}}</p>
                         <p><b>Humedad : </b>{{Humedad}}</p>
                         <p><b>Clima : </b>{{Clima}}</p>
