@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { SpinnerComponent } from './Components/spinner/spinner.component';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { ShortUrlComponent } from './Components/short-url/short-url.component';
-import { SpinnerComponent } from './Components/spinner/spinner.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { SpinnerComponent } from './Components/spinner/spinner.component';
     SpinnerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

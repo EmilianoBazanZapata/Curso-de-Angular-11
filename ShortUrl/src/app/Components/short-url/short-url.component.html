@@ -2,15 +2,15 @@
     <h1 class="text-center display-5">Ingrese una Url para Acortar</h1>
     <div class="row text-center">
         <div class="col-lg-8">
-            <input class="form-control form-control-lg" type="text" placeholder="Ingrese un Link">
+            <input [(ngModel)]="NombreUrl" class="form-control form-control-lg" type="text" placeholder="Ingrese un Link">
         </div>
         <div class="col-lg-4">
-            <button type="button" class="btn btn-primary btn-block btn-lg">Acortar</button>
+            <button type="button" class="btn btn-primary btn-block btn-lg" (click)="ProcesarUrl()">Acortar</button>
         </div>
     </div>
-    <div class="row mce-text-center mt-3">
+    <div class="row mce-text-center mt-3" *ngIf="UrlProcesada">
         <div class="col-lg-8">
-            <input class="form-control form-control-lg" type="text" placeholder="Link Acortado">
+            <input [(ngModel)]="UrlShort" class="form-control form-control-lg" type="text" placeholder="Link Acortado">
         </div>
     </div>
 </div>

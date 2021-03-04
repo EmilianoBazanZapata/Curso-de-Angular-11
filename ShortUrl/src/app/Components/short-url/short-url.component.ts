@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShortUrlComponent implements OnInit {
 
-  constructor() { }
+  NombreUrl:string;
+  UrlShort:string;
+  UrlProcesada:boolean;
+  constructor() 
+  {
+    this.NombreUrl = '';
+    this.UrlShort = '';
+    this.UrlProcesada = false;
+  }
 
   ngOnInit(): void {
   }
-
+  ProcesarUrl(){
+    console.log(this.NombreUrl);
+  }
 }
