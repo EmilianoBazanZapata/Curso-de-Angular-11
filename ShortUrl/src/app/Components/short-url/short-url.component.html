@@ -1,16 +1,22 @@
 <div class="container mt-3">
     <h1 class="text-center display-5">Ingrese una Url para Acortar</h1>
     <div class="row text-center">
-        <div class="col-lg-8">
+        <div class="col-lg-8 mt-3">
             <input [(ngModel)]="NombreUrl" class="form-control form-control-lg" type="text" placeholder="Ingrese un Link">
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 mt-3">
             <button type="button" class="btn btn-primary btn-block btn-lg" (click)="ProcesarUrl()">Acortar</button>
         </div>
     </div>
     <div class="row mce-text-center mt-3" *ngIf="UrlProcesada">
         <div class="col-lg-8">
             <input [(ngModel)]="UrlShort" class="form-control form-control-lg" type="text" placeholder="Link Acortado">
+        </div>
+    </div>
+    <div *ngIf="MostrarError" class="card text-white bg-warning mb-3 mt-3">
+        <div class="card-header">Advertencia!!!</div>
+        <div class="card-body">
+            <p class="card-text">Al Parecer NO ingreso una URL para acrotar</p>
         </div>
     </div>
     <app-spinner *ngIf="Loading"></app-spinner>
