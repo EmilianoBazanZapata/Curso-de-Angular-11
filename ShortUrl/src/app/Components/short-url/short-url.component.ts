@@ -12,12 +12,14 @@ export class ShortUrlComponent implements OnInit {
   UrlShort: string;
   UrlProcesada: boolean;
   Loading: boolean;
-  MostrarError: boolean;
+  MostrarAdvertencia: boolean;
+  MostrarError:boolean;
   constructor(private _ShortUrlServices: ShortUrlService) {
     this.NombreUrl = '';
     this.UrlShort = '';
     this.UrlProcesada = false;
     this.Loading = false;
+    this.MostrarAdvertencia = false;
     this.MostrarError = false;
   }
 
@@ -31,11 +33,11 @@ export class ShortUrlComponent implements OnInit {
     setTimeout(() => {
       //validar URL vacia
       if (this.NombreUrl === '') {
-        this.MostrarError = true;
+        this.MostrarAdvertencia = true;
         this.Loading = false;
         //a los 4 segundos quito la advertencia del campo vacio 
         setTimeout(() => {
-          this.MostrarError = false;
+          this.MostrarAdvertencia = false;
         }, 4000);
         return;
       }
@@ -52,6 +54,23 @@ export class ShortUrlComponent implements OnInit {
       this.UrlProcesada = true;
       this.UrlShort = data.link;
       this.Loading = false;
-    })
+    },error=>
+    {
+      console.log(error.error.description);
+      if(error.error.description ==='The value provided is invalid.')
+      {
+        this.MostrarError = true;
+        setTimeout(() => {
+          this.MostrarError = false;
+        }, 3000);
+      }
+      this.Loading = false;
+    }
+    )
+  }
+
+  error(valor:string)
+  {
+
   }
 }

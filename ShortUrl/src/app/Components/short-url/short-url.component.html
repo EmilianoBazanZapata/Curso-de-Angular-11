@@ -13,10 +13,17 @@
             <input [(ngModel)]="UrlShort" class="form-control form-control-lg" type="text" placeholder="Link Acortado">
         </div>
     </div>
-    <div *ngIf="MostrarError" class="card text-white bg-warning mb-3 mt-3">
+    <div *ngIf="MostrarAdvertencia" class="card text-white bg-warning mb-3 mt-3">
         <div class="card-header">Advertencia!!!</div>
         <div class="card-body">
             <p class="card-text">Al Parecer NO ingreso una URL para acrotar</p>
+        </div>
+    </div>
+    <div *ngIf="MostrarError" class="card text-white bg-danger mt-3">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h4 class="card-title">La URL es Invalida</h4>
+            <p class="card-text"></p>
         </div>
     </div>
     <app-spinner *ngIf="Loading"></app-spinner>
