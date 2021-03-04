@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ClimaService {
 
-  Url_1='http://api.openweathermap.org/data/2.5/weather?q=';
+  Url_1='https://api.openweathermap.org/data/2.5/weather?q=';
   Url_2='&appid=';
   Key='5754e3ef9c214e608e57faad2486bd70';
   constructor(private http:HttpClient) 

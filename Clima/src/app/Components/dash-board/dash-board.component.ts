@@ -43,6 +43,7 @@ export class DashBoardComponent implements OnInit {
         this.Tarjeta = true;
       },error=>
       {
+        console.log(error);
         this.Loading = false;
         this.Tarjeta = false;
         this.Error = true;
