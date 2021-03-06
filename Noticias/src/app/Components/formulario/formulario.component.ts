@@ -29,7 +29,7 @@ export class FormularioComponent implements OnInit {
     {value:'br' , nombre:'Brasil'},
     {value:'fr' , nombre:'Francia'},
     {value:'hu' , nombre:'Hungaria'},
-    {value:'bmx' , nombre:'Mexico'},
+    {value:'mx' , nombre:'Mexico'},
     {value:'gb' , nombre:'Reino Unido'}
   ];
   constructor() { }

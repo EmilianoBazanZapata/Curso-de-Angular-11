@@ -2,5 +2,7 @@
 <div class="container">
     <!--Recibo el parametro enviado desde el componente hijo y lo envio al archivo ts-->
     <app-formulario (ParametrosSeleccionados)="BuscarNoticias($event)"></app-formulario>
-    <app-listado-noticias></app-listado-noticias>
+    <app-spinner *ngIf="loading"></app-spinner>
+    <!--envio el lisatdo de noticias al componente hijo-->
+    <app-listado-noticias [ListNoticias]="ListNoticias"></app-listado-noticias>
 </div>
