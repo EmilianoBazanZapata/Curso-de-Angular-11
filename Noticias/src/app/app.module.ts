@@ -2,10 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { FormularioComponent } from './Components/formulario/formulario.component';
+import { ListadoNoticiasComponent } from './Components/listado-noticias/listado-noticias.component';
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { SpinnerComponent } from './Shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormularioComponent,
+    ListadoNoticiasComponent,
+    NavBarComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule
