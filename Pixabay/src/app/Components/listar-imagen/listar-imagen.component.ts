@@ -13,11 +13,16 @@ export class ListarImagenComponent implements OnInit {
   subscription: Subscription;
   ListImagenes:any[] = [];
   loading = false;
+  ImagenPorPagina=30;
+  PaginaActual=1;
+  CalcularTotalPagina=0;
+
   constructor(private _ImagenService: ImagenService) {
     this.subscription = this._ImagenService.GetTerminoBusqueda().subscribe(data => {
       console.log(data);
       this.Termino = data;
       this.loading = true;
+      this.PaginaActual = 1;
       this.ObtenerImagenes();
     });
   }
@@ -25,7 +30,7 @@ export class ListarImagenComponent implements OnInit {
   ngOnInit(): void {
   }
   ObtenerImagenes() {
-    this._ImagenService.GetImagenes(this.Termino).subscribe(data => 
+    this._ImagenService.GetImagenes(this.Termino , this.ImagenPorPagina , this.PaginaActual).subscribe(data => 
       {
         setTimeout(() => {
           this.loading = false;
@@ -36,6 +41,7 @@ export class ListarImagenComponent implements OnInit {
           this._ImagenService.SetError('Opss... no encontramos un resultado con ese termino de Busqueda');
           return;
         }
+        this.CalcularTotalPagina = Math.ceil(data.totalHits / this.ImagenPorPagina);
         
         this.ListImagenes = data.hits;
 
@@ -44,5 +50,41 @@ export class ListarImagenComponent implements OnInit {
         this.loading = false;
         this._ImagenService.SetError('Ocurrio un Error , El servidor se encuentra momentaneamente fuera de servicio');
       });
+  }
+  PaginaAnterior()
+  {
+    this.PaginaActual--;
+    this.loading = true;
+    this.ListImagenes=[];
+    this,this.ObtenerImagenes();
+  }
+  PaginaPosterior()
+  {
+    this.PaginaActual++;
+    this.loading = true;
+    this.ListImagenes=[];
+    this,this.ObtenerImagenes();
+  }
+  PaginaAnteriorClass()
+  {
+    if(this.PaginaActual === 1)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+  PaginaPosteriorClass()
+  {
+    if(this.PaginaActual === this.CalcularTotalPagina)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
   }
 }
