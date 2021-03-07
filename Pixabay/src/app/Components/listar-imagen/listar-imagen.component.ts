@@ -25,6 +25,14 @@ export class ListarImagenComponent implements OnInit {
     this._ImagenService.GetImagenes(this.Termino).subscribe(data => 
       {
         console.log(data);
+        if(data.hits.length === 0)
+        {
+          this._ImagenService.SetError('Opss... no encontramos un resultado con ese termino de Busqueda');
+          return;
+        }
+      }, error=>
+      {
+        this._ImagenService.SetError('Ocurrio un Error , El servidor se encuentra momentaneamente fuera de servicio');
       });
   }
 }
