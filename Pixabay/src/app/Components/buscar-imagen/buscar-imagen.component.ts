@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImagenService } from 'src/app/Services/imagen.service';
 
 @Component({
   selector: 'app-buscar-imagen',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class BuscarImagenComponent implements OnInit {
 
   NombreImagen:string;
-  constructor() 
+  constructor(private _ImagenService:ImagenService) 
   {
     this.NombreImagen='';
   }
@@ -17,6 +18,10 @@ export class BuscarImagenComponent implements OnInit {
   }
   BuscarImagenes()
   {
-    console.log(this.NombreImagen);
+    if(this.NombreImagen ==='')
+    {
+      //envio el error al service
+      this._ImagenService.SetError('Debe ingresar Un Parametro de Busqueda');
+    }
   }
 }
