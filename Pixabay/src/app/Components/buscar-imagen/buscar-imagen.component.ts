@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarImagenComponent implements OnInit {
 
-  constructor() { }
+  NombreImagen:string;
+  constructor() 
+  {
+    this.NombreImagen='';
+  }
 
   ngOnInit(): void {
   }
-
+  BuscarImagenes()
+  {
+    console.log(this.NombreImagen);
+  }
 }
