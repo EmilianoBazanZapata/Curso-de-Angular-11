@@ -11,6 +11,7 @@ export class ListarImagenComponent implements OnInit {
 
   Termino = '';
   subscription: Subscription;
+  ListImagenes:any[] = [];
   constructor(private _ImagenService: ImagenService) {
     this.subscription = this._ImagenService.GetTerminoBusqueda().subscribe(data => {
       console.log(data);
@@ -30,6 +31,10 @@ export class ListarImagenComponent implements OnInit {
           this._ImagenService.SetError('Opss... no encontramos un resultado con ese termino de Busqueda');
           return;
         }
+
+        this.ListImagenes = data.hits;
+
+
       }, error=>
       {
         this._ImagenService.SetError('Ocurrio un Error , El servidor se encuentra momentaneamente fuera de servicio');
