@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
@@ -8,7 +9,7 @@ export class ImagenService {
 
   private $Error = new Subject<string>();
   private $TerminoBusqueda = new Subject<string>();
-  constructor() 
+  constructor(private http:HttpClient) 
   {
 
   }
@@ -29,5 +30,10 @@ export class ImagenService {
   {
     return this.$TerminoBusqueda.asObservable();
   }
-  
+  GetImagenes(Termino:string):Observable<any>
+  {
+    const Key='=20565064-032233a710231fe20593bc0ac';
+    const Url='https://pixabay.com/api/?key'+ Key +'&q=' + Termino;
+    return this.http.get(Url);
+  }
 }

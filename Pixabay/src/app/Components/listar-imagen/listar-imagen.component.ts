@@ -9,16 +9,22 @@ import { ImagenService } from 'src/app/Services/imagen.service';
 })
 export class ListarImagenComponent implements OnInit {
 
-  Termino='';
-  subscription : Subscription;
-  constructor(private _ImagenService:ImagenService) 
-  {
-    this.subscription = this._ImagenService.GetTerminoBusqueda().subscribe(data =>{
+  Termino = '';
+  subscription: Subscription;
+  constructor(private _ImagenService: ImagenService) {
+    this.subscription = this._ImagenService.GetTerminoBusqueda().subscribe(data => {
       console.log(data);
+      this.Termino = data;
+      this.ObtenerImagenes();
     });
   }
 
   ngOnInit(): void {
   }
-
+  ObtenerImagenes() {
+    this._ImagenService.GetImagenes(this.Termino).subscribe(data => 
+      {
+        console.log(data);
+      });
+  }
 }
