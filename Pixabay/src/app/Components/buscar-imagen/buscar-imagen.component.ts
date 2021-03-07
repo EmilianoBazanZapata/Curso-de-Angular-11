@@ -22,6 +22,9 @@ export class BuscarImagenComponent implements OnInit {
     {
       //envio el error al service
       this._ImagenService.SetError('Debe ingresar Un Parametro de Busqueda');
+      return;
     }
+    //envio el valor del input a service
+    this._ImagenService.EnviarTerminoBusqueda(this.NombreImagen);
   }
 }
