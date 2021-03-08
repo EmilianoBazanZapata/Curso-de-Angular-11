@@ -20,6 +20,6 @@ export class TarjetaService {
 
   ObtenerTarjetas():Observable<any>
   {
-    return this.firebase.collection('tarjetas').snapshotChanges();
+    return this.firebase.collection('tarjetas', ref=> ref.orderBy('FechaCreacion','desc')).snapshotChanges();
   }
 }
