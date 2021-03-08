@@ -4,16 +4,19 @@ export class TarjetaCrediro
     Titular:string;
     NumeroTarjeta:string;
     Cvv:number;
-    FechaExpiracion:Date;
+    FechaExpiracion:string;
+    FechaCreacion:Date;
     FechaActualizacion:Date;
 
-    constructor(Titular:string ,NumeroTarjeta:string , Cvv:number , FechaExpiracion:Date , FechaActualizacion:Date)
+    constructor(Titular:string ,NumeroTarjeta:string , Cvv:number , FechaExpiracion:string)
     {
         this.Titular = Titular;
         this.NumeroTarjeta = NumeroTarjeta;
         this.Cvv = Cvv;
-        this.FechaExpiracion = new Date();
+        this.FechaExpiracion = FechaExpiracion;
+        this.FechaCreacion = new Date();
         this.FechaActualizacion = new Date();
+
     }
 
 }
