@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { promise } from 'selenium-webdriver';
 import { TarjetaCrediro } from '../Models/TarjetaCredito';
 
@@ -15,5 +16,10 @@ export class TarjetaService {
   GuardarTarjeta(tarjeta:TarjetaCrediro): Promise<any>
   {
     return this.firebase.collection('tarjetas').add(tarjeta);
+  }
+
+  ObtenerTarjetas():Observable<any>
+  {
+    return this.firebase.collection('tarjetas').snapshotChanges();
   }
 }

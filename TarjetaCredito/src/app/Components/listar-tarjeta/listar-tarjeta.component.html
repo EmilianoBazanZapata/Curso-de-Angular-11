@@ -2,23 +2,25 @@
     <div class="card-body">
         <h5 class="titulo">Listar Tarjeta</h5>
         <table class="table">
-            <tr>
-                <td>
-                    Tomas Garcia
-                </td>
-                <td>
-                    1234567890123456
-                </td>
-                <td>
-                    06/24
-                </td>
-                <td>
-                    <i class="fas fa-user-edit green-icon"></i>
-                </td>
-                <td>
-                    <i class="fas fa-trash-alt red-icon"></i>
-                </td>
-            </tr>
+            <tbody>
+                <tr *ngFor="let tarjeta of ListTarjeta">
+                    <td>
+                        {{tarjeta.Titular}}
+                    </td>
+                    <td>
+                        {{tarjeta.NumeroTarjeta}}
+                    </td>
+                    <td>
+                        {{tarjeta.FechaExpiracion}}
+                    </td>
+                    <td>
+                        <i class="fas fa-user-edit green-icon"></i>
+                    </td>
+                    <td>
+                        <i class="fas fa-trash-alt red-icon"></i>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
