@@ -1,6 +1,12 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="titulo">Crear Tarjeta</h5>
+        <h5 class="titulo">Crear Tarjeta
+            <div class="spinner float-end" *ngIf="loading">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </h5>
+
         <form [formGroup]="form" (ngSubmit)="CrearTarjeta()">
             <div class="input-group mb-3">
                 <span class="input-group-text">
