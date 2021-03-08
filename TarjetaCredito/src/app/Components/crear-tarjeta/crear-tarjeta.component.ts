@@ -14,9 +14,9 @@ export class CrearTarjetaComponent implements OnInit {
   {
     this.form = this.fb.group({
       titular:['',Validators.required],
-      numeroTarjeta:['',Validators.required],
-      fechaExpiracion:['',Validators.required],
-      Cvv:['',Validators.required],
+      numeroTarjeta:['',[Validators.required,Validators.minLength(16),Validators.maxLength(16)]],
+      fechaExpiracion:['',[Validators.required,Validators.minLength(5),Validators.maxLength(5)]],
+      Cvv:['',[Validators.required,Validators.minLength(3),Validators.maxLength(3)]],
     });
   }
 
