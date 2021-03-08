@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaCrediro } from 'src/app/Models/TarjetaCredito';
+import { TarjetaService } from 'src/app/Services/tarjeta.service';
 
 @Component({
   selector: 'app-crear-tarjeta',
@@ -11,7 +12,7 @@ export class CrearTarjetaComponent implements OnInit {
 
   form:FormGroup;
 
-  constructor(private fb:FormBuilder) 
+  constructor(private fb:FormBuilder ,private _TarjetaService:TarjetaService) 
   {
     this.form = this.fb.group({
       titular:['',Validators.required],
@@ -34,7 +35,11 @@ export class CrearTarjetaComponent implements OnInit {
       FechaCreacion :new Date(),
       FechaActualizacion:new Date()
     }
-    console.log(Tarjeta);
+    this._TarjetaService.GuardarTarjeta(Tarjeta).then(()=>
+    {
+      console.log('tarjeta registrada');
+      this.form.reset();
+    });
   }
 
 }
