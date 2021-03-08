@@ -9,17 +9,21 @@ import { TarjetaCrediro } from '../Models/TarjetaCredito';
 })
 export class TarjetaService {
 
-  constructor(private firebase:AngularFirestore) 
+  constructor(private firestore:AngularFirestore) 
   {
 
   }
   GuardarTarjeta(tarjeta:TarjetaCrediro): Promise<any>
   {
-    return this.firebase.collection('tarjetas').add(tarjeta);
+    return this.firestore.collection('tarjetas').add(tarjeta);
   }
 
   ObtenerTarjetas():Observable<any>
   {
-    return this.firebase.collection('tarjetas', ref=> ref.orderBy('FechaCreacion','desc')).snapshotChanges();
+    return this.firestore.collection('tarjetas', ref=> ref.orderBy('FechaCreacion','desc')).snapshotChanges();
+  }
+  EliminarTarjeta(id:string): Promise<any>
+  {
+   return  this.firestore.firestore.collection('tarjetas').doc(id).delete();
   }
 }
