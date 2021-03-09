@@ -14,7 +14,7 @@
                         {{tarjeta.FechaExpiracion}}
                     </td>
                     <td>
-                        <i class="fas fa-user-edit green-icon"></i>
+                        <i class="fas fa-user-edit green-icon" (click)="EditarTarjeta(tarjeta)"></i>
                     </td>
                     <td>
                         <i class="fas fa-trash-alt red-icon" (click)="EliminarTarjeta(tarjeta.id)"></i>

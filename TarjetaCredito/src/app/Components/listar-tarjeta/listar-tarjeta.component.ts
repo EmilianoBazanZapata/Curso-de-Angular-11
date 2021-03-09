@@ -38,4 +38,8 @@ export class ListarTarjetaComponent implements OnInit {
       console.log(error);
     });
   }
+  EditarTarjeta(tarjeta:TarjetaCrediro)
+  {
+    this._TarjetaService.EditarTarjeta(tarjeta);
+  }
 }

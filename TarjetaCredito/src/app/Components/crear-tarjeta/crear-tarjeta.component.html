@@ -1,13 +1,13 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="titulo">Crear Tarjeta
+        <h5 class="titulo">{{titulo | uppercase}}
             <div class="spinner float-end" *ngIf="loading">
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
             </div>
         </h5>
 
-        <form [formGroup]="form" (ngSubmit)="CrearTarjeta()">
+        <form [formGroup]="form" (ngSubmit)="GuardarTarjeta()">
             <div class="input-group mb-3">
                 <span class="input-group-text">
                     <i class="fas fa-user-circle" 
