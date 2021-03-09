@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'RuteoNavegacion'`, () => {
+  it(`should have as title 'Usuarios'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('RuteoNavegacion');
+    expect(app.title).toEqual('Usuarios');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('RuteoNavegacion app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Usuarios app is running!');
   });
 });
