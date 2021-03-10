@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-usuario',
@@ -11,12 +12,14 @@ export class CardUsuarioComponent implements OnInit {
   email:string;
   gender:string;
   ImgUrl='';
-  constructor() { }
+  id:number;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.firstName = this.user.name;
     this.email = this.user.email;
     this.gender = this.user.gender;
+    this.id = this.user.id;
     if(this.gender ==='Male')
     {
       this.ImgUrl='https://www.segurosprismacr.com/wp-content/uploads/2020/12/iconfinder_website_-_male_business_3440841.png';
@@ -26,5 +29,4 @@ export class CardUsuarioComponent implements OnInit {
       this.ImgUrl='https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_female_user-512.png';
     }
   }
-
 }
