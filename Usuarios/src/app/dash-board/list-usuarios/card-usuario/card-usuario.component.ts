@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 
 @Component({
   selector: 'app-card-usuario',
@@ -6,11 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-usuario.component.css']
 })
 export class CardUsuarioComponent implements OnInit {
-
-  ImgUrl='https://static.independent.co.uk/2021/01/31/15/newFile-8.jpg?width=640&auto=webp&quality=75';
+  @Input() user:any;
+  firstName:string;
+  email:string;
+  gender:string;
+  ImgUrl='';
   constructor() { }
 
   ngOnInit(): void {
+    this.firstName = this.user.name;
+    this.email = this.user.email;
+    this.gender = this.user.gender;
+    if(this.gender ==='Male')
+    {
+      this.ImgUrl='https://www.segurosprismacr.com/wp-content/uploads/2020/12/iconfinder_website_-_male_business_3440841.png';
+    }
+    else
+    {
+      this.ImgUrl='https://cdn1.iconfinder.com/data/icons/website-internet/48/website_-_female_user-512.png';
+    }
   }
 
 }
