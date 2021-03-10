@@ -10,13 +10,18 @@ export class ListUsuariosComponent implements OnInit {
 
   constructor(private _UsuarioService: UsuarioService) { }
   listUsuarios: any[] = [];
+  loading = true;
   ngOnInit(): void {
     this.GetUusuario();
   }
   GetUusuario(): void {
-    this._UsuarioService.GetUsuarios().subscribe(data => {
-      this.listUsuarios = data.data;
-      console.log(data);
-    })
+    setTimeout(() => {
+      this.loading= false;
+      this._UsuarioService.GetUsuarios().subscribe(data => {
+        this.listUsuarios = data.data;
+        console.log(data);
+      })
+    }, 3000);
+    
   }
 }
