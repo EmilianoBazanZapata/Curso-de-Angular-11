@@ -13,4 +13,9 @@ export class UsuarioService {
   {
     return this.http.get<any>(this.Url + '?access-token=' + this.Token);
   }
+  GetUsuario(id:number):Observable<any>
+  {
+    //return this.http.get<any>(this.Url + '?id=' + id + '?access-token=' +this.Token)
+    return this.http.get<any>(this.Url + '/' + id + '?access-token=' + this.Token)
+  }
 }

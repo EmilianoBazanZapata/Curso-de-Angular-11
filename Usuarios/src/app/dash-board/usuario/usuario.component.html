@@ -1,1 +1,25 @@
-<p>usuario works!</p>
+<div class="spinner" *ngIf="loading"></div>
+<div class="container d-flex justify-content-center" *ngIf="!loading">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card" style="width: 25rem;">
+                <img [src]="ImgUrl" alt="" class="card-img-top">
+                <div class="card text-center">
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item email">
+                            <h6 class="email">{{firstName}}</h6>
+                        </li>
+                        <li class="list-group-item">
+                            Email : {{email}}
+                        </li>
+                        <li class="list-group-item">
+                            Gender : {{gender}}
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary btn-block" routerLink="/dashboard">Volver</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,6 @@ export class ListUsuariosComponent implements OnInit {
       this.loading= false;
       this._UsuarioService.GetUsuarios().subscribe(data => {
         this.listUsuarios = data.data;
-        console.log(data);
       })
     }, 3000);
     
