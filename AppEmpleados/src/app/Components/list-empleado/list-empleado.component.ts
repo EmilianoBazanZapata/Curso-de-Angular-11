@@ -7,6 +7,7 @@ import { EmpleadoService } from 'src/app/Services/empleado.service';
 import { Empleado } from 'src/app/Models/Empleado';
 import { MatDialog } from '@angular/material/dialog';
 import { MensajeConfirmacionComponent } from '../Shared/mensaje-confirmacion/mensaje-confirmacion.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list-empleado',
@@ -25,7 +26,8 @@ export class ListEmpleadoComponent implements AfterViewInit, OnInit {
   ListEmpleado: Empleado[];
 
   constructor(private _EmpleadoService: EmpleadoService,
-    public dialog: MatDialog) {
+              public dialog: MatDialog,
+              public snackbar:MatSnackBar) {
 
   }
 
@@ -61,6 +63,8 @@ export class ListEmpleadoComponent implements AfterViewInit, OnInit {
       this._EmpleadoService.EliminarEmpleado(id);
       //recargo la ista
       this.CargarEmpleados();
+      this.snackbar.open('El Empleado se elimino Exitosamente','',{duration:4000});
+
       }
       
     });
