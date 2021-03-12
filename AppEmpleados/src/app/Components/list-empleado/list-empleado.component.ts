@@ -49,5 +49,11 @@ export class ListEmpleadoComponent implements AfterViewInit , OnInit{
     this.dataSource = new MatTableDataSource(this.ListEmpleado);
     console.log(this.ListEmpleado);
   }
-
+  EliminarEmpleado(id:number)
+  {
+    //elimino el empleado enviando el id al service 
+    this._EmpleadoService.EliminarEmpleado(id);
+    //recargo la ista
+    this.CargarEmpleados();
+  }
 }

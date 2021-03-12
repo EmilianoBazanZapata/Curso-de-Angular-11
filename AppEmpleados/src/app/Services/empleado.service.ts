@@ -22,4 +22,8 @@ export class EmpleadoService {
   {
     return this.ListEmpleados.slice();
   }
+  EliminarEmpleado(id:number)
+  {
+    this.ListEmpleados.splice(id,1);
+  }
 }
