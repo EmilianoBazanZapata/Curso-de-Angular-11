@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 //angular material
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatTableModule} from '@angular/material/table'; 
 
 
 
@@ -13,12 +14,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     CommonModule,
     MatSliderModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule
   ],
   exports:
   [
     MatSliderModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule
   ]
 })
 export class AngularMaterialModule { }
