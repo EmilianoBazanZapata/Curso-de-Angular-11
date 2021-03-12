@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { AfterViewInit } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
+import { EmpleadoService } from 'src/app/Services/empleado.service';
+import { Empleado } from 'src/app/Models/Empleado';
 
 export interface PeriodicElement {
   name: string;
@@ -37,11 +39,17 @@ export class ListEmpleadoComponent implements AfterViewInit , OnInit{
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor() { }
+  //Creo un arregl ode empleados vacia
+  ListEmpleado:Empleado[];
 
-  ngOnInit()
+  constructor(private _EmpleadoService:EmpleadoService) 
   {
 
+  }
+
+  ngOnInit():void
+  {
+    this.CargarEmpleados();
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -50,6 +58,12 @@ export class ListEmpleadoComponent implements AfterViewInit , OnInit{
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  CargarEmpleados()
+  {
+    this.ListEmpleado = this._EmpleadoService.GetEmpleados();
+    console.log(this.ListEmpleado);
   }
 
 }
