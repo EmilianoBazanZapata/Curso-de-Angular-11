@@ -11,7 +11,7 @@ export class EmpleadoService {
   [{
     NombreCompleto:'Emiliano Bazan Zapata',
     Correo:'ejemplo@gmail.com',
-    Telefono:35237232373523,
+    Telefono:35237,
     Sexo:'Masculino',
     FechaDeIngreso:new Date(),
     EstadoCivil:'Soltero'
