@@ -1,4 +1,10 @@
 table {
     width: 98%;
-    margin: 15px;
+    margin-left: 10px;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 98%;
+    margin-left: 10px;
 }
