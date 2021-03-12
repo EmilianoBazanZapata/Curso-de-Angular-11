@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 
 //angular material
-import { MatSliderModule } from '@angular/material/slider';
+import {MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatTableModule} from '@angular/material/table'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator'; 
 
 
 
@@ -19,7 +20,8 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
   exports:
   [
@@ -27,7 +29,8 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ]
 })
 export class AngularMaterialModule { }
