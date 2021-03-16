@@ -1,5 +1,6 @@
+import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Empleado } from 'src/app/Models/Empleado';
@@ -28,12 +29,12 @@ export class AddEditEmpleadoComponent implements OnInit {
   {
     this.myForm = this.fb.group(
       {
-        nombreCompleto:[''],
-        Correo:[''],
-        Telefono:[''],
-        FechaIngreso:[''],
-        EstadoCivil:[''],
-        Sexo:['']
+        nombreCompleto:['',Validators.required],
+        Correo:['',Validators.required],
+        Telefono:['',Validators.required],
+        FechaIngreso:['',Validators.required],
+        EstadoCivil:['',Validators.required],
+        Sexo:['Masculino']
       });
   }
 
@@ -42,7 +43,7 @@ export class AddEditEmpleadoComponent implements OnInit {
 
   GuardarEmpleado()
   {
-    const empleado : Empleado=
+     const empleado : Empleado=
     {
       NombreCompleto: this.myForm.get('nombreCompleto').value,
       Correo: this.myForm.get('Correo').value,
