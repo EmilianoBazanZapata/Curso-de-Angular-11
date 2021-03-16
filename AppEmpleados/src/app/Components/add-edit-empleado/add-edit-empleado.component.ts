@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditEmpleadoComponent implements OnInit {
 
+  EstadosCiviles: any[] =
+  [
+    'Soltero',
+    'Casado',
+    'Viudo'
+  ];
   constructor() { }
 
   ngOnInit(): void {

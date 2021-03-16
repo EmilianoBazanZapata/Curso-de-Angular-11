@@ -6,24 +6,24 @@ import { Empleado } from '../Models/Empleado';
 })
 export class EmpleadoService {
 
-  //creo un lista de empleados
-  ListEmpleados:Empleado[]=
+  // creo un lista de empleados
+  ListEmpleados: Empleado[] =
   [{
-    NombreCompleto:'Emiliano Bazan Zapata',
-    Correo:'ejemplo@gmail.com',
-    Telefono:35237,
-    Sexo:'Masculino',
-    FechaDeIngreso:new Date(),
-    EstadoCivil:'Soltero'
-  }]
+    NombreCompleto: 'Emiliano Bazan Zapata',
+    Correo: 'ejemplo@gmail.com',
+    Telefono: 35237,
+    Sexo: 'Masculino',
+    FechaDeIngreso: new Date(),
+    EstadoCivil: 'Soltero'
+  }];
   constructor() { }
-  //un metodo obtiene dicha lista
+  // un metodo obtiene dicha lista
   GetEmpleados()
   {
     return this.ListEmpleados.slice();
   }
-  EliminarEmpleado(id:number)
+  EliminarEmpleado(id: number)
   {
-    this.ListEmpleados.splice(id,1);
+    this.ListEmpleados.splice(id, 1);
   }
 }

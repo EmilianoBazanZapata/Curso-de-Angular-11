@@ -1,9 +1,9 @@
 export class Empleado
 {
-    NombreCompleto:string;
-    Telefono:number;
+    NombreCompleto: string;
+    Telefono: number;
     Correo: string;
-    FechaDeIngreso:Date;
-    EstadoCivil:string;
-    Sexo:string;
+    FechaDeIngreso: Date;
+    EstadoCivil: string;
+    Sexo: string;
 }

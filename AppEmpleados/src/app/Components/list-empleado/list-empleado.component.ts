@@ -18,16 +18,16 @@ export class ListEmpleadoComponent implements AfterViewInit, OnInit {
 
 
   displayedColumns: string[] = ['Nombre', 'Correo', 'EstadoCivil', 'FechadeIngreso', 'Sexo', 'Telefono', 'Acciones'];
-  //dataSource = ELEMENT_DATA;
+  // dataSource = ELEMENT_DATA;
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  //Creo un arregl ode empleados vacia
+  // Creo un arregl ode empleados vacia
   ListEmpleado: Empleado[];
 
   constructor(private _EmpleadoService: EmpleadoService,
               public dialog: MatDialog,
-              public snackbar:MatSnackBar) {
+              public snackbar: MatSnackBar) {
 
   }
 
@@ -36,7 +36,7 @@ export class ListEmpleadoComponent implements AfterViewInit, OnInit {
   }
   ngAfterViewInit() {
 
-    
+
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -44,9 +44,9 @@ export class ListEmpleadoComponent implements AfterViewInit, OnInit {
   }
 
   CargarEmpleados() {
-    //relleno la lista con el listado del servicio
+    // relleno la lista con el listado del servicio
     this.ListEmpleado = this._EmpleadoService.GetEmpleados();
-    //paso los datros al data source
+    // paso los datros al data source
     this.dataSource = new MatTableDataSource(this.ListEmpleado);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -59,14 +59,14 @@ export class ListEmpleadoComponent implements AfterViewInit, OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result === 'Aceptar')
       {
-        //elimino el empleado enviando el id al service 
+        // elimino el empleado enviando el id al service
       this._EmpleadoService.EliminarEmpleado(id);
-      //recargo la ista
+      // recargo la ista
       this.CargarEmpleados();
       this.snackbar.open('El Empleado se elimino Exitosamente','',{duration:4000});
 
       }
-      
+
     });
 
   }
