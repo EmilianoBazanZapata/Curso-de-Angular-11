@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-edit-empleado',
@@ -13,9 +14,22 @@ export class AddEditEmpleadoComponent implements OnInit {
     'Casado',
     'Viudo'
   ];
-  constructor() { }
+  myForm:FormGroup;
+  Sexo:string;
+
+  constructor(private fb:FormBuilder) 
+  {
+    this.myForm = this.fb.group(
+      {
+        nombreCompleto:[''],
+        Correo:[''],
+        Telefono:[''],
+        FechaIngreso:[''],
+        EstadoCivil:[''],
+        Sexo:['Masculino']
+      });
+  }
 
   ngOnInit(): void {
   }
-
 }

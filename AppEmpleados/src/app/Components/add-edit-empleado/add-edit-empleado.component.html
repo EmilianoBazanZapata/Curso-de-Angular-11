@@ -3,34 +3,35 @@
         <h2>Agregar Empleado</h2>
     </div>
 </div>
+<pre>{{myForm.value | json}}</pre>
 <div class="row">
     <div class="col-lg-4">
-        <form autocomplete="off">
+        <form autocomplete="off" [formGroup]="myForm">
             <div class="col-lg-12">
                 <mat-form-field class="example-container" [style.fontSize.px]="16">
                     <mat-label>Nombre Completo</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="nombreCompleto">
                 </mat-form-field>
             </div>
             <div class="col-lg-12">
                 <mat-form-field class="example-container" [style.fontSize.px]="16">
                     <mat-label>Correo</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="Correo">
                 </mat-form-field>
             </div>
             <div class="col-lg-12">
-                <input type="text" placeholder="Fecha de Ingreso" onfocus="(this.type='date')" class="form-control">
+                <input type="text" placeholder="Fecha de Ingreso" onfocus="(this.type='date')" class="form-control" formControlName="FechaIngreso">
             </div>
             <div class="col-lg-12">
                 <mat-form-field class="example-container" [style.fontSize.px]="16">
                     <mat-label>Telefono</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="Telefono">
                 </mat-form-field>
             </div>
             <div class="col-lg-12">
                 <mat-form-field class="example-container">
                     <mat-label>Estado Civil</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="EstadoCivil">
                         <mat-option *ngFor="let estadocivil of EstadosCiviles" [value]="estadocivil">
                             {{estadocivil}}
                         </mat-option>
@@ -40,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked value="Masculino" formControlName="Sexo">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Masculino
                         </label>
@@ -48,7 +49,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Femenino" formControlName="Sexo">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Femenino
                         </label>
