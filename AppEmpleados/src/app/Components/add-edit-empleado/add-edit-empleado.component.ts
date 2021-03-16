@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { Empleado } from 'src/app/Models/Empleado';
+import { EmpleadoService } from 'src/app/Services/empleado.service';
 
 @Component({
   selector: 'app-add-edit-empleado',
@@ -17,7 +21,10 @@ export class AddEditEmpleadoComponent implements OnInit {
   myForm:FormGroup;
   Sexo:string;
 
-  constructor(private fb:FormBuilder) 
+  constructor(private fb:FormBuilder ,
+              private _EmpleadoService :EmpleadoService,
+              private route :Router,
+              private snackbar:MatSnackBar) 
   {
     this.myForm = this.fb.group(
       {
@@ -26,10 +33,26 @@ export class AddEditEmpleadoComponent implements OnInit {
         Telefono:[''],
         FechaIngreso:[''],
         EstadoCivil:[''],
-        Sexo:['Masculino']
+        Sexo:['']
       });
   }
 
   ngOnInit(): void {
+  }
+
+  GuardarEmpleado()
+  {
+    const empleado : Empleado=
+    {
+      NombreCompleto: this.myForm.get('nombreCompleto').value,
+      Correo: this.myForm.get('Correo').value,
+      Telefono: this.myForm.get('Telefono').value,
+      FechaDeIngreso: this.myForm.get('FechaIngreso').value,
+      EstadoCivil: this.myForm.get('EstadoCivil').value,
+      Sexo: this.myForm.get('Sexo').value
+    }
+    this._EmpleadoService.AgregarEmpleado(empleado);
+    this.route.navigate(['/']);
+    this.snackbar.open('El Empleado se registro Exitosamente','',{duration:4000});
   }
 }

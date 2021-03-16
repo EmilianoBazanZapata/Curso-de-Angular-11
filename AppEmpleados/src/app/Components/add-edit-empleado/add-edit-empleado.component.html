@@ -3,7 +3,7 @@
         <h2>Agregar Empleado</h2>
     </div>
 </div>
-<pre>{{myForm.value | json}}</pre>
+<!--<pre>{{myForm.value | json}}</pre>-->
 <div class="row">
     <div class="col-lg-4">
         <form autocomplete="off" [formGroup]="myForm">
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked value="Masculino" formControlName="Sexo">
+                        <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault1" value="Masculino" formControlName="Sexo">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Masculino
                         </label>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Femenino" formControlName="Sexo">
+                        <input class="form-check-input" type="radio" name="Sexo" id="flexRadioDefault2" value="Femenino" formControlName="Sexo">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Femenino
                         </label>
@@ -60,7 +60,7 @@
             <div class="col-lg-12">
 
                 <button type="button" class="btn btn-danger btn-block btn-lg float-end" style="margin-left: 10px;" routerLink="/">Cancelar</button>
-                <button type="button" class="btn btn-primary btn-block btn-lg float-end">Aceptar</button>
+                <button type="button" class="btn btn-primary btn-block btn-lg float-end" (click)="GuardarEmpleado()">Aceptar</button>
             </div>
         </form>
     </div>

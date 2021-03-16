@@ -26,4 +26,8 @@ export class EmpleadoService {
   {
     this.ListEmpleados.splice(id, 1);
   }
+  AgregarEmpleado(empleado : Empleado)
+  {
+    this.ListEmpleados.push(empleado);
+  }
 }
