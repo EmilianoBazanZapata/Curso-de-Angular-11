@@ -1,0 +1,17 @@
+.list-group-item {
+    cursor: pointer;
+}
+
+.icono {
+    float: right;
+}
+
+.fas.fa-times.incorrect {
+    color: #da2d2d;
+    font-size: 30px;
+}
+
+.fas.fa-check-circle.correct {
+    color: #17a2b8;
+    font-size: 30px;
+}
