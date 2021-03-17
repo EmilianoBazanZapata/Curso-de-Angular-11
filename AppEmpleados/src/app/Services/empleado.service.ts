@@ -13,7 +13,7 @@ export class EmpleadoService {
     Correo: 'ejemplo@gmail.com',
     Telefono: 35237,
     Sexo: 'Masculino',
-    FechaDeIngreso: new Date(),
+    FechaDeIngreso: '15/05/2000',
     EstadoCivil: 'Soltero'
   }];
   constructor() { }
@@ -28,6 +28,19 @@ export class EmpleadoService {
   }
   AgregarEmpleado(empleado : Empleado)
   {
-    this.ListEmpleados.push(empleado);
+    this.ListEmpleados.unshift(empleado);
+  }
+  GetEmpleado(index:number)
+  {
+    return this.ListEmpleados[index];
+  }
+  EditarEmpleado(empleado:Empleado , index:number)
+  {
+    this.ListEmpleados[index].NombreCompleto= empleado.NombreCompleto;
+    this.ListEmpleados[index].Correo= empleado.Correo;
+    this.ListEmpleados[index].EstadoCivil= empleado.EstadoCivil;
+    this.ListEmpleados[index].FechaDeIngreso= empleado.FechaDeIngreso;
+    this.ListEmpleados[index].Sexo= empleado.Sexo;
+    this.ListEmpleados[index].Telefono= empleado.Telefono;
   }
 }

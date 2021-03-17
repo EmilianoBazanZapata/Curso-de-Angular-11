@@ -3,7 +3,7 @@ export class Empleado
     NombreCompleto: string;
     Telefono: number;
     Correo: string;
-    FechaDeIngreso: Date;
+    FechaDeIngreso: string;
     EstadoCivil: string;
     Sexo: string;
 }
