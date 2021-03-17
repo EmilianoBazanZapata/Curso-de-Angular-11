@@ -9,8 +9,18 @@ import { PreguntaService } from 'src/app/Services/pregunta.service';
 export class BotoneraComponent implements OnInit {
 
   constructor(public _PreguntaService:PreguntaService) { }
-
+  btnString='Aceptar';
   ngOnInit(): void {
   }
-
+  Siguiente()
+  {
+    switch(this.btnString)
+    {
+      case'Aceptar':
+      {
+        this._PreguntaService.PregConfirmada = true;
+        this.btnString = 'Siguiente';
+      }
+    }
+  }
 }

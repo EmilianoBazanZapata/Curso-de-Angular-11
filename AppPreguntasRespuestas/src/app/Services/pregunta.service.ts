@@ -11,6 +11,9 @@ export class PreguntaService {
   IndexPregunta = 0;
   OpcionSeleccionada:Respuesta;
   DeshabilitarBtn = true;
+  PregConfirmada = false;
+
+
   public Preguntas:Pregunta[]=
   [
     new Pregunta('Cual es la Capital de Argentina',[

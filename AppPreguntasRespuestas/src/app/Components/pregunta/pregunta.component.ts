@@ -28,9 +28,44 @@ export class PreguntaComponent implements OnInit {
   }
   AddClassOption(Respuesta:Respuesta)
   {
-    if(Respuesta === this._PreguntaService.OpcionSeleccionada)
+    //respuesta seleccionada y no esta confirmada
+    if(Respuesta === this._PreguntaService.OpcionSeleccionada && !this._PreguntaService.PregConfirmada)
     {
       return 'active text-light';
+    }
+    //respuesta correcta y esta confirmada
+    if(Respuesta === this._PreguntaService.OpcionSeleccionada && this._PreguntaService.PregConfirmada &&this._PreguntaService.OpcionSeleccionada.EsCorrecta === 1)
+    {
+      return 'list-group-item-success';
+    }
+    //respuesta incorrecta y esta confirmada
+    if(Respuesta === this._PreguntaService.OpcionSeleccionada && this._PreguntaService.PregConfirmada &&this._PreguntaService.OpcionSeleccionada.EsCorrecta === 0)
+    {
+      return 'list-group-item-danger';
+    }
+  }
+  IconCorrecta(Respuesta:Respuesta)
+  {
+    //respuesta correcta y esta confirmada
+    if(Respuesta === this._PreguntaService.OpcionSeleccionada && this._PreguntaService.PregConfirmada &&this._PreguntaService.OpcionSeleccionada.EsCorrecta === 1)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  IconIncorrecta(Respuesta:Respuesta)
+  {
+    //respuesta correcta y esta confirmada
+    if(Respuesta === this._PreguntaService.OpcionSeleccionada && this._PreguntaService.PregConfirmada &&this._PreguntaService.OpcionSeleccionada.EsCorrecta === 0)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
     }
   }
 }
