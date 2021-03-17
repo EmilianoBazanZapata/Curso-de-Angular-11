@@ -12,6 +12,8 @@ export class PreguntaService {
   OpcionSeleccionada:Respuesta;
   DeshabilitarBtn = true;
   PregConfirmada = false;
+  IndexRespuesta = null;
+  RespuetsaUsuario:Array<number> = [];
 
 
   public Preguntas:Pregunta[]=

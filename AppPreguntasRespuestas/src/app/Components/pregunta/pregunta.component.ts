@@ -21,7 +21,7 @@ export class PreguntaComponent implements OnInit {
   {
     return this.ListPregunta[this._PreguntaService.IndexPregunta].Descripcion;
   }
-  RespuestaSeleccionada(Respuesta : Respuesta)
+  RespuestaSeleccionada(Respuesta : Respuesta, index: number)
   {
     if(this._PreguntaService.PregConfirmada === true)
     {
@@ -29,6 +29,7 @@ export class PreguntaComponent implements OnInit {
     }
     this._PreguntaService.OpcionSeleccionada = Respuesta;
     this._PreguntaService.DeshabilitarBtn = false;
+    this._PreguntaService.IndexRespuesta = index;
   }
   AddClassOption(Respuesta:Respuesta)
   {

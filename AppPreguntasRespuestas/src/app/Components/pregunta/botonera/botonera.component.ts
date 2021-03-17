@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PreguntaService } from 'src/app/Services/pregunta.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { PreguntaService } from 'src/app/Services/pregunta.service';
 })
 export class BotoneraComponent implements OnInit {
 
-  constructor(public _PreguntaService:PreguntaService) { }
+  constructor(public _PreguntaService:PreguntaService,private router:Router) { }
   btnString='Aceptar';
   ngOnInit(): void {
   }
@@ -20,6 +21,25 @@ export class BotoneraComponent implements OnInit {
       {
         this._PreguntaService.PregConfirmada = true;
         this.btnString = 'Siguiente';
+        if(this._PreguntaService.Preguntas.length-1 == this._PreguntaService.IndexPregunta)
+        {
+          this.btnString ='Finalizar';
+        }
+        break;
+      }
+      case'Siguiente':
+      {
+        this._PreguntaService.IndexPregunta++;
+        this._PreguntaService.RespuetsaUsuario.push(this._PreguntaService.IndexRespuesta);
+        this._PreguntaService.DeshabilitarBtn = true;
+        this._PreguntaService.PregConfirmada = false;
+        this.btnString = 'Aceptar';
+        break;
+      }
+      case'Finalizar':
+      {
+        this._PreguntaService.RespuetsaUsuario.push(this._PreguntaService.IndexRespuesta);
+        this.router.navigate(['/respuesta']);
       }
     }
   }
