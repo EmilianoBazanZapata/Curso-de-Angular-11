@@ -23,6 +23,10 @@ export class PreguntaComponent implements OnInit {
   }
   RespuestaSeleccionada(Respuesta : Respuesta)
   {
+    if(this._PreguntaService.PregConfirmada === true)
+    {
+      return;
+    }
     this._PreguntaService.OpcionSeleccionada = Respuesta;
     this._PreguntaService.DeshabilitarBtn = false;
   }
