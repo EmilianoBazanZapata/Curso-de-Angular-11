@@ -39,6 +39,9 @@ export class BotoneraComponent implements OnInit {
       case'Finalizar':
       {
         this._PreguntaService.RespuetsaUsuario.push(this._PreguntaService.IndexRespuesta);
+        this._PreguntaService.OpcionSeleccionada = null;
+        this._PreguntaService.PregConfirmada = false;
+        this._PreguntaService.IndexPregunta = 0;
         this.router.navigate(['/respuesta']);
       }
     }
