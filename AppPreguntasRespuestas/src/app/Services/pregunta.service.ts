@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { RespuestaComponent } from '../Components/respuesta/respuesta.component';
 import { Pregunta } from '../Models/Preunta';
 import { Respuesta } from '../Models/Respuesta';
 
@@ -8,6 +9,8 @@ import { Respuesta } from '../Models/Respuesta';
 export class PreguntaService {
 
   IndexPregunta = 0;
+  OpcionSeleccionada:Respuesta;
+  DeshabilitarBtn = true;
   public Preguntas:Pregunta[]=
   [
     new Pregunta('Cual es la Capital de Argentina',[

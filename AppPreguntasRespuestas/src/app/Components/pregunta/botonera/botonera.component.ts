@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PreguntaService } from 'src/app/Services/pregunta.service';
 
 @Component({
   selector: 'app-botonera',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotoneraComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _PreguntaService:PreguntaService) { }
 
   ngOnInit(): void {
   }
